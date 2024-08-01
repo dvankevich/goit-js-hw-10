@@ -6,6 +6,7 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 
 let userSelectedDate;
+
 //let userSelectedDateUnixTimestamp;
 // https://nesin.io/blog/javascript-date-to-unix-timestamp
 
@@ -40,7 +41,14 @@ const fp = flatpickr('input#datetime-picker', options);
 
 //console.log(document.querySelector('.timer .field .value[data-days]'));
 
-function updateTimerInterface(days, hours, minutes, seconds) {
+const interval = {
+  days: '03',
+  hours: '09',
+  minutes: '01',
+  seconds: '04',
+};
+
+function updateTimerInterface(interval) {
   // Get the element with the "data-*" attributes
   const daysElement = document.querySelector('.timer .field .value[data-days]');
   const hoursElement = document.querySelector(
@@ -54,11 +62,40 @@ function updateTimerInterface(days, hours, minutes, seconds) {
   );
 
   // set interface elements
-  daysElement.innerText = days;
-  hoursElement.innerText = hours;
-  minutesElement.innerText = minutes;
-  secondsElement.innerText = seconds;
+  daysElement.innerText = interval.days;
+  hoursElement.innerText = interval.hours;
+  minutesElement.innerText = interval.minutes;
+  secondsElement.innerText = interval.seconds;
+}
+
+function convertUnixTimeToTime(milliseconds) {
+  function addZero(s) {
+    if (s.length === 1) {
+      s = '0' + s;
+    }
+    return s;
+  }
+  // Отримання кількості днів, годин, хвилин та секунд
+  const days = Math.floor(milliseconds / (24 * 60 * 60 * 1000)).toString();
+  const hours = Math.floor(
+    (milliseconds % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)
+  ).toString();
+  const minutes = Math.floor(
+    (milliseconds % (60 * 60 * 1000)) / (60 * 1000)
+  ).toString();
+  const seconds = Math.floor((milliseconds % (60 * 1000)) / 1000).toString();
+
+  // Повернення результату у вигляді об'єкта
+  return {
+    days: addZero(days),
+    hours: addZero(hours),
+    minutes: addZero(minutes),
+    seconds: addZero(seconds),
+  };
 }
 
 //test updateTimerInterface(days, hours, minutes, seconds) function
-updateTimerInterface('09', '22', '56', '33');
+updateTimerInterface(interval);
+
+console.log(Date.now());
+console.log(convertUnixTimeToTime(1722538054379));
