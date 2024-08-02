@@ -31,7 +31,7 @@ const options = {
     //console.log(dateNow);
     if (userSelectedDate.getTime() < dateNow) {
       //window.alert('Please choose a date in the future');
-      iziToast.show({
+      iziToast.error({
         title: 'ALERT',
         message: 'Please choose a date in the future',
       });

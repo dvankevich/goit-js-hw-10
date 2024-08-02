@@ -9,3 +9,61 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+input {
+  padding: 8px 16px;
+  margin-right: 8px;
+  margin-left: 156px;
+  margin-top: 36px;
+  margin-bottom: 32px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 272px;
+  background: #fff;
+}
+
+button {
+  font-weight: 500;
+  border: 0px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 75px;
+  background: #cfcfcf;
+
+}
+
+.timer {
+  display: flex;
+  margin-left: 156px;
+  gap: 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.value {
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+
+}
+
+.label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
