@@ -5,7 +5,7 @@ import flatpickr from 'flatpickr';
 // Додатковий імпорт стилів
 import 'flatpickr/dist/flatpickr.min.css';
 
-let userSelectedDate;
+let userSelectedDate = 0;
 
 //let userSelectedDateUnixTimestamp;
 // https://nesin.io/blog/javascript-date-to-unix-timestamp
@@ -69,6 +69,7 @@ function updateTimerInterface(interval) {
 }
 
 function convertUnixTimeToTime(milliseconds) {
+  // ToDo use padStart function https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
   function addZero(s) {
     if (s.length === 1) {
       s = '0' + s;
@@ -94,8 +95,29 @@ function convertUnixTimeToTime(milliseconds) {
   };
 }
 
-//test updateTimerInterface(days, hours, minutes, seconds) function
-updateTimerInterface(interval);
+startButton.addEventListener('click', () => {
+  //console.log('Button click handler');
+  startButton.disabled = true;
 
-console.log(Date.now());
-console.log(convertUnixTimeToTime(1722538054379));
+  // create interval
+  const intervalId = setInterval(() => {
+    const timeToGo = userSelectedDate - Date.now();
+    //console.log(timeToGo);
+    if (userSelectedDate - Date.now() > 0) {
+      updateTimerInterface(convertUnixTimeToTime(timeToGo));
+    } else {
+      //startButton.disabled = false;
+      clearInterval(intervalId);
+    }
+  }, 1000);
+});
+
+// Deactivate button
+startButton.disabled = true;
+//console.log(startButton.disabled);
+
+//test updateTimerInterface(days, hours, minutes, seconds) function
+//updateTimerInterface(interval);
+
+//console.log(Date.now());
+//console.log(convertUnixTimeToTime(1722538054379));
