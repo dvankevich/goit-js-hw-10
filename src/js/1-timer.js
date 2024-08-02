@@ -4,6 +4,10 @@
 import flatpickr from 'flatpickr';
 // Додатковий імпорт стилів
 import 'flatpickr/dist/flatpickr.min.css';
+// Описаний у документації
+import iziToast from 'izitoast';
+// Додатковий імпорт стилів
+import 'izitoast/dist/css/iziToast.min.css';
 
 let userSelectedDate = 0;
 
@@ -26,7 +30,11 @@ const options = {
     //console.log(userSelectedDate.getTime());
     //console.log(dateNow);
     if (userSelectedDate.getTime() < dateNow) {
-      window.alert('Please choose a date in the future');
+      //window.alert('Please choose a date in the future');
+      iziToast.show({
+        title: 'ALERT',
+        message: 'Please choose a date in the future',
+      });
       startButton.disabled = true;
     } else {
       startButton.disabled = false;
