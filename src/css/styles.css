@@ -21,14 +21,25 @@ body {
 
 input {
   padding: 8px 16px;
-  margin-right: 8px;
-  margin-left: 156px;
-  margin-top: 36px;
-  margin-bottom: 32px;
+  margin: 36px 8px 32px 156px;
   border: 1px solid #808080;
   border-radius: 4px;
   width: 272px;
   background: #fff;
+}
+
+input:hover,
+input:focus {
+  border: 1px solid #000;
+}
+
+input:active {
+  border: 1px solid #4e75ff;
+}
+
+input:disabled {
+  border: 1px solid #808080;
+  background: #fafafa;
 }
 
 button {
@@ -37,8 +48,17 @@ button {
   border-radius: 8px;
   padding: 8px 16px;
   width: 75px;
-  background: #cfcfcf;
+  color: #fff;
+  background: #4e75ff;
+}
 
+button:hover {
+  background: #6c8cff;
+}
+
+button:disabled {
+  color: #989898;
+  background: #cfcfcf;
 }
 
 .timer {

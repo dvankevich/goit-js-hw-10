@@ -17,12 +17,14 @@ let userSelectedDate = 0;
 // https://www.scaler.com/topics/javascript-disable-button/
 const startButton = document.querySelector('button');
 //console.log(startButton.disabled);
+const inputField = document.querySelector('input');
 
 const options = {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
+  //altInputClass: 'input',
   onClose(selectedDates) {
     const dateNow = Date.now();
     userSelectedDate = selectedDates[0];
@@ -106,6 +108,7 @@ function convertUnixTimeToTime(milliseconds) {
 startButton.addEventListener('click', () => {
   //console.log('Button click handler');
   startButton.disabled = true;
+  inputField.disabled = true;
 
   // create interval
   const intervalId = setInterval(() => {
@@ -114,7 +117,8 @@ startButton.addEventListener('click', () => {
     if (userSelectedDate - Date.now() > 0) {
       updateTimerInterface(convertUnixTimeToTime(timeToGo));
     } else {
-      //startButton.disabled = false;
+      startButton.disabled = false;
+      inputField.disabled = false;
       clearInterval(intervalId);
     }
   }, 1000);
@@ -122,6 +126,7 @@ startButton.addEventListener('click', () => {
 
 // Deactivate button
 startButton.disabled = true;
+inputField.disabled = false;
 //console.log(startButton.disabled);
 
 //test updateTimerInterface(days, hours, minutes, seconds) function
