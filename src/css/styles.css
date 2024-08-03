@@ -28,14 +28,12 @@ input {
   background: #fff;
 }
 
-input:hover,
-input:focus {
+input:hover {
   border: 1px solid #000;
 }
 
-input:active {
-  /* border: 1px solid #4e75ff; */
-  border: 1px solid red;
+.flatpickr-input:focus {
+  border: 1px solid #4e75ff !important;
 }
 
 input:disabled {
@@ -89,15 +87,10 @@ button:disabled {
   text-transform: uppercase;
 }
 
-.flatpickr-input:active {
-  border: 1px solid red !important;
-}
-
 /* https: //stackoverflow.com/questions/54256483/how-can-i-apply-custom-css-to-a-toast-with-ng2-izitoast */
 
 .iziToast>.iziToast-close {
-  background-color: blueviolet !important;
-  background: url(../img/izi-close.svg) !important;
+  background: url(/img/izi-close.svg) !important;
   background-repeat: no-repeat !important;
   background-position: 50% 50% !important;
 }
