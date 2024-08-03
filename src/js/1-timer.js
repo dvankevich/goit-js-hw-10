@@ -4,6 +4,7 @@
 import flatpickr from 'flatpickr';
 // Додатковий імпорт стилів
 import 'flatpickr/dist/flatpickr.min.css';
+//import 'flatpickr/dist/themes/light.css';
 // Описаний у документації
 import iziToast from 'izitoast';
 // Додатковий імпорт стилів
@@ -34,8 +35,19 @@ const options = {
     if (userSelectedDate.getTime() < dateNow) {
       //window.alert('Please choose a date in the future');
       iziToast.error({
-        title: 'ALERT',
+        title: 'Error',
         message: 'Please choose a date in the future',
+        position: 'topRight',
+        titleColor: '#fff',
+        titleSize: '16px',
+        titleLineHeight: '1.5',
+        messageColor: '#fff',
+        messageSize: '16px',
+        messageLineHeight: '1.5',
+        backgroundColor: '#ef4040',
+        theme: 'light',
+        iconUrl: '../img/izi-icon.svg',
+        imageWidth: 24,
       });
       startButton.disabled = true;
     } else {
