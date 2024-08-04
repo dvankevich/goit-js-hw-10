@@ -1,0 +1,2 @@
+import"./assets/modulepreload-polyfill-3cfb730f.js";/* empty css                      */const a=document.querySelector("button"),t=document.querySelector('input[name="delay"]');let l=t.value;t.addEventListener("change",()=>{l=t.value});const o=document.querySelectorAll('input[name="state"]'),c=i=>{let e="";o.forEach(n=>{n.checked&&(e=n.value)}),e&&l?console.log(`set promice with state: ${e} and dellay: ${l}`):window.alert("Please fill in all fields.")};a.addEventListener("click",c);
+//# sourceMappingURL=commonHelpers2.js.map
