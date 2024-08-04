@@ -46,7 +46,7 @@ const options = {
         messageLineHeight: '1.5',
         backgroundColor: '#ef4040',
         theme: 'light',
-        iconUrl: 'izi-icon.svg',
+        iconUrl: 'izi-icon.svg', // зображення має бути у папці public
         imageWidth: 24,
       });
       startButton.disabled = true;
