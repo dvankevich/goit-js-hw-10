@@ -32,14 +32,12 @@ const handleClick = event => {
     // Create promise
     const promise = new Promise((resolve, reject) => {
       //console.log('new Promice');
-      let msg = '';
+      const savedPromiceDelay = promiceDelay;
       setTimeout(() => {
         if (promiceState === 'fulfilled') {
-          msg = `✅ Fulfilled promise in ${promiceDelay} ms`;
-          resolve(msg);
+          resolve(`✅ Fulfilled promise in ${savedPromiceDelay} ms`);
         } else {
-          msg = `❌ Rejected promise in ${promiceDelay} ms`;
-          reject(msg);
+          reject(`❌ Rejected promise in ${savedPromiceDelay} ms`);
         }
       }, promiceDelay);
     });
