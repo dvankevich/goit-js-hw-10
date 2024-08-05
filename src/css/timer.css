@@ -67,3 +67,11 @@ button:disabled {
     line-height: 1.5;
     text-transform: uppercase;
 }
+
+/* https: //stackoverflow.com/questions/54256483/how-can-i-apply-custom-css-to-a-toast-with-ng2-izitoast */
+
+.iziToast>.iziToast-close {
+    background: url(/izi-close.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 50% !important;
+}

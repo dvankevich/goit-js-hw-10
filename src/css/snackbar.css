@@ -49,7 +49,7 @@ legend {
   margin-left: -20px;
 }
 
-button {
+form>button {
   margin-top: 24px;
   border: none;
   border-radius: 8px;
@@ -66,4 +66,10 @@ button {
 button:hover,
 button:focus {
   background-color: #6c8cff;
+}
+
+.iziToast>.iziToast-close {
+  background: url(/izi-close.svg) !important;
+  background-repeat: no-repeat !important;
+  background-position: 50% 50% !important;
 }
