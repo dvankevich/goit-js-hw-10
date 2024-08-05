@@ -7,20 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>snackbar</title>
   
+  <link rel="stylesheet" href="./css/snackbar.css" />
   <script type="module" crossorigin src="/goit-js-hw-10/commonHelpers2.js"></script>
   <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/modulepreload-polyfill-3cfb730f.js">
-  <link rel="stylesheet" href="/goit-js-hw-10/assets/styles-3ca7417d.css">
+  <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/vendor-77e16229.js">
+  <link rel="stylesheet" href="/goit-js-hw-10/assets/vendor-7a007824.css">
+  <link rel="stylesheet" href="/goit-js-hw-10/assets/styles-98252a6b.css">
 </head>
 
 <body>
 
   <a href="./index.html">Go to home</a>
-  <h1>snackbar</h1>
 
   <form class="form">
     <label>
       Delay (ms)
-      <input type="number" name="delay" required step="1000" />
+      <input type="number" name="delay" required step="1000" min="0" />
     </label>
 
     <fieldset>
