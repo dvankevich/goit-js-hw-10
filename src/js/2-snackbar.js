@@ -1,5 +1,10 @@
 'use strict';
 
+// Описаний у документації
+import iziToast from 'izitoast';
+// Додатковий імпорт стилів
+import 'izitoast/dist/css/iziToast.min.css';
+
 const button = document.querySelector('button');
 const delay = document.querySelector('input[name="delay"]');
 let promiceDelay = delay.value;
