@@ -94,9 +94,6 @@ const handleClick = event => {
           ...iziError,
           message: `${error.slice(1)}`,
         });
-        iziToast.error({
-          message: `${error.slice(1)}`,
-        });
         console.log(error); // "Error! Error passed to reject function"
       }
     );

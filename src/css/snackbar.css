@@ -10,3 +10,23 @@
   gap: 8px;
   margin-bottom: 16px;
 }
+
+input {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  transition: border 250ms linear;
+  padding: 8px 16px;
+  outline: transparent;
+}
+
+input:hover {
+  border: 1px solid #000;
+}
+
+input:focus {
+  border: 1px solid #4e75ff;
+}
+
+fieldset {
+  padding: 24px 48px 8px 48px;
+}
