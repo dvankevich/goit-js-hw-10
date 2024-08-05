@@ -5,6 +5,40 @@ import iziToast from 'izitoast';
 // Додатковий імпорт стилів
 import 'izitoast/dist/css/iziToast.min.css';
 
+const iziCommon = {
+  message: 'Common message',
+  theme: 'dark',
+  position: 'topRight',
+  titleColor: '#fff',
+  titleSize: '16px',
+  titleLineHeight: '1.5',
+  messageColor: '#fff',
+  messageSize: '16px',
+  messageLineHeight: '1.5',
+  imageWidth: 24,
+};
+
+const iziSuccess = {
+  ...iziCommon,
+  title: 'OK',
+  color: '#59a10d',
+  iconUrl: 'ok-icon.svg', // зображення має бути у папці public
+};
+
+const iziError = {
+  ...iziCommon,
+  title: 'Error',
+  color: '#ef4040',
+  iconUrl: 'error-icon.svg', // зображення має бути у папці public
+};
+
+const iziWarning = {
+  ...iziCommon,
+  title: 'Warning',
+  color: '#ffa000',
+  iconUrl: 'caution-icon.svg',
+};
+
 const button = document.querySelector('button');
 const delay = document.querySelector('input[name="delay"]');
 let promiceDelay = delay.value;
@@ -49,16 +83,31 @@ const handleClick = event => {
     // Registering promise callbacks
     promise.then(
       value => {
+        iziToast.success({
+          ...iziSuccess,
+          message: `${value.slice(1)}`,
+        });
         console.log(value); // "Success! Value passed to resolve function"
       },
       error => {
+        iziToast.error({
+          ...iziError,
+          message: `${error.slice(1)}`,
+        });
+        iziToast.error({
+          message: `${error.slice(1)}`,
+        });
         console.log(error); // "Error! Error passed to reject function"
       }
     );
     // reset form values
     stateForm.reset();
   } else {
-    window.alert('Please fill in all fields.');
+    iziToast.warning({
+      ...iziWarning,
+      message: 'Please fill in all fields.',
+    });
+    // window.alert('Please fill in all fields.');
   }
 };
 
